@@ -159,18 +159,18 @@ services:
     command:
       - '--providers.docker.exposedByDefault=false'
       - '--providers.docker.network=cvat'
-      - '--entryPoints.web.address=:8080'
+      - '--entryPoints.web.address=:3950'
       - '--providers.file.directory=/etc/traefik/rules'
-    # Uncomment to get Traefik dashboard
-    #   - "--entryPoints.dashboard.address=:8090"
-    #   - "--api.dashboard=true"
-    # labels:
-    #   - traefik.enable=true
-    #   - traefik.http.routers.dashboard.entrypoints=dashboard
-    #   - traefik.http.routers.dashboard.service=api@internal
-    #   - traefik.http.routers.dashboard.rule=Host(`${CVAT_HOST:-localhost}`)
+      # Uncomment to get Traefik dashboard
+      - '--entryPoints.dashboard.address=:8090'
+      - '--api.dashboard=true'
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.dashboard.entrypoints=dashboard
+      - traefik.http.routers.dashboard.service=api@internal
+      - traefik.http.routers.dashboard.rule=Host(`${CVAT_HOST:-localhost}`)
     ports:
-      - 8080:8080
+      - 3950:3950
       - 8090:8090
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
