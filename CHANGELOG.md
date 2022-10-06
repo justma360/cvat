@@ -5,6 +5,38 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## \[2.3.0] - Unreleased
+### Added
+- SDK section in docs (<https://github.com/opencv/cvat/pull/4928>)
+- An env variable to enable or disable host certificate checking in CLI (<https://github.com/opencv/cvat/pull/4928>)
+- REST API tests with skeletons (<https://github.com/opencv/cvat/pull/4987>)
+
+### Changed
+- `api/docs`, `api/swagger`, `api/schema` endpoints now allow unauthorized access (<https://github.com/opencv/cvat/pull/4928>)
+- Datumaro version (<https://github.com/opencv/cvat/pull/4984>)
+
+### Deprecated
+- TDB
+
+### Removed
+- TDB
+
+### Fixed
+- Removed a possibly duplicated encodeURI() calls in `server-proxy.ts` to prevent doubly encoding
+non-ascii paths while adding files from "Connected file share" (issue #4428)
+- Removed unnecessary volumes defined in docker-compose.serverless.yml
+(<https://github.com/openvinotoolkit/cvat/pull/4659>)
+- Project import/export with skeletons (<https://github.com/opencv/cvat/pull/4867>,
+  <https://github.com/opencv/cvat/pull/5004>)
+- Shape color is not changed on canvas after changing a label (<https://github.com/opencv/cvat/pull/5045>)
+- Unstable e2e restore tests (<https://github.com/opencv/cvat/pull/5010>)
+- IOG and f-BRS serverless function (<https://github.com/opencv/cvat/pulls>)
+- Invisible label item in label constructor when label color background is white,
+ or close to it (<https://github.com/opencv/cvat/pull/5041>)
+
+### Security
+- TDB
+
 ## \[2.2.0] - 2022-09-12
 ### Added
 - Added ability to delete frames from a job based on (<https://github.com/openvinotoolkit/cvat/pull/4194>)
@@ -30,6 +62,9 @@ Skeleton (<https://github.com/cvat-ai/cvat/pull/1>), (<https://github.com/opencv
   <https://github.com/opencv/cvat/pull/4908>)
 - Support for Oracle OCI Buckets (<https://github.com/opencv/cvat/pull/4876>)
 - `cvat-sdk` and `cvat-cli` packages on PyPI (<https://github.com/opencv/cvat/pull/4903>)
+- UI part for source and target storages (<https://github.com/opencv/cvat/pull/4842>)
+- Backup import/export modals (<https://github.com/opencv/cvat/pull/4842>)
+- Annotations import modal (<https://github.com/opencv/cvat/pull/4842>)
 
 ### Changed
 - Bumped nuclio version to 1.8.14
